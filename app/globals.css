@@ -87,3 +87,28 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Curved edge for hero image */
+.curved-edge-left {
+  position: relative;
+  overflow: hidden;
+}
+
+.curved-edge-left::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 200px;
+  background: inherit;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.curved-edge-left img,
+.curved-edge-left > div {
+  clip-path: ellipse(200px 100% at 0% 50%);
+  -webkit-clip-path: ellipse(200px 100% at 0% 50%);
+}
+

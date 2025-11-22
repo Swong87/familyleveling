@@ -57,48 +57,73 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Full Width */}
-      <section className="relative w-full h-[60vh] overflow-hidden">
-        {/* Hero Banner Image - Full Width */}
-        <div className="absolute inset-0 w-full h-full">
-          <Image
-            src="/images/hero/hero-banner.jpg"
-            alt="FamilyLeveling - Level up your family style"
-            fill
-            className="object-cover"
-            priority
-            sizes="100vw"
-            style={{ objectPosition: '80% center' }}
-          />
-          {/* Overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-purple-50 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-4">
+          <div className="flex items-center justify-between">
+            <Link href="/" className="flex items-center gap-2">
+              <div className="text-2xl font-bold text-purple-500">
+                Family Leveling
+              </div>
+            </Link>
+            <Link
+              href="https://www.etsy.com/shop/FamilyLeveling"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 hover:text-orange-600 font-medium transition-colors"
+            >
+              Shop on Etsy →
+            </Link>
+          </div>
         </div>
-        
-        {/* Content Overlay */}
-        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
-          <div className="max-w-4xl mx-auto animate-fade-in-up">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg">
-              Funny Family Shirts for Gamers & Movie Lovers
-            </h1>
-            <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto leading-relaxed mb-8 drop-shadow-md">
-              Welcome to FamilyLeveling, where family life meets player life! We create cute and funny 
-              family tees that celebrate progress, teamwork, and laughter.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link
-                href="https://www.etsy.com/shop/FamilyLeveling"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-full transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl"
-              >
-                Shop Now on Etsy
-              </Link>
+      </header>
+      
+      {/* Hero Section */}
+      <section className="relative w-full bg-gradient-to-br from-yellow-50 via-orange-50 to-purple-50 py-12 md:py-20 px-4 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left Side - Text and CTA (stacks below image on mobile) */}
+            <div className="order-2 lg:order-1 text-center lg:text-left animate-fade-in-up w-full">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                Funny Family Shirts for Gamers
+              </h1>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+                Welcome to Family Leveling, where family life meets player life! We create cute and funny
+                family tees that celebrate progress, teamwork, and laughter. Every design brings smiles,
+                sparks conversations, and makes every day feel like a new quest.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Link
+                  href="https://www.etsy.com/shop/FamilyLeveling"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="z-10 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-full transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl text-center"
+                >
+                  Shop Now on Etsy
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Side - Circular Image (stacks on top on mobile) */}
+            <div className="order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in-up w-full" style={{ animationDelay: '0.2s' }}>
+              <div className="relative w-80 h-80 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] xl:w-[600px] xl:h-[600px] rounded-full overflow-hidden shadow-2xl border-8 border-white">
+                <Image
+                  src="/images/hero/3lifestyle.jpg"
+                  alt="Family Leveling lifestyle"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 640px) 232px, (max-width: 768px) 320px, (max-width: 1024px) 384px, 500px"
+                />
+              </div>
             </div>
           </div>
         </div>
-        
+
         {/* Wave divider to white section */}
-        <WaveDivider fillColor="#ffffff" position="bottom" />
+        <div className="absolute bottom-0 left-0 right-0">
+          <WaveDivider fillColor="#ffffff" position="bottom" />
+        </div>
       </section>
 
       {/* Trust Badges Section */}
@@ -106,22 +131,38 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             <div className="text-center animate-fade-in-up">
-              <div className="text-3xl mb-2">🚚</div>
+              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-orange-100 flex items-center justify-center">
+                <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                </svg>
+              </div>
               <div className="font-semibold text-gray-900">Free Shipping</div>
               <div className="text-sm text-gray-600">On all orders</div>
             </div>
             <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-              <div className="text-3xl mb-2">✨</div>
+              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-purple-100 flex items-center justify-center">
+                <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
               <div className="font-semibold text-gray-900">Quality Guaranteed</div>
               <div className="text-sm text-gray-600">Premium materials</div>
             </div>
             <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <div className="text-3xl mb-2">❤️</div>
+              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-pink-100 flex items-center justify-center">
+                <svg className="w-6 h-6 text-pink-600" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+              </div>
               <div className="font-semibold text-gray-900">Family Owned</div>
               <div className="text-sm text-gray-600">Made with love</div>
             </div>
             <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-              <div className="text-3xl mb-2">⭐</div>
+              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-blue-100 flex items-center justify-center">
+                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+              </div>
               <div className="font-semibold text-gray-900">Etsy Shop</div>
               <div className="text-sm text-gray-600">Secure checkout</div>
             </div>
@@ -133,28 +174,28 @@ export default function Home() {
       <section className="py-20 px-4 bg-gradient-to-br from-purple-50 via-yellow-50 to-purple-50 relative overflow-hidden">
         {/* Wave divider from white section */}
         <WaveDivider fillColor="#ffffff" position="top" flip />
-        
+
         {/* Decorative circles */}
         <div className="absolute top-10 left-10 w-32 h-32 bg-purple-200/30 rounded-full blur-2xl animate-float" />
         <div className="absolute bottom-10 right-10 w-40 h-40 bg-yellow-200/30 rounded-full blur-2xl animate-float" style={{ animationDelay: '1s' }} />
-        
+
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 animate-fade-in-up">
             Leveling Up Family Time – One Matching Tee at a Time!
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            As a family of gamers, we loved the thrill of leveling up together, whether that meant 
-            beating a boss battle or just surviving a chaotic school morning. We wanted shirts that 
-            captured those inside jokes, those shared victories, and the playful "we're in this together" 
+            As a family of gamers, we loved the thrill of leveling up together, whether that meant
+            beating a boss battle or just surviving a chaotic school morning. We wanted shirts that
+            captured those inside jokes, those shared victories, and the playful "we're in this together"
             energy that comes with being a family.
           </p>
           <p className="text-lg text-gray-700 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            So we created FamilyLeveling, a cozy corner of the internet for geeky families, gamer 
-            parents, and little adventurers who love to match in style. From "Player One" to "Next Gen," 
+            So we created FamilyLeveling, a cozy corner of the internet for geeky families, gamer
+            parents, and little adventurers who love to match in style. From "Player One" to "Next Gen,"
             our tees and gifts are made to bring smiles and spark conversations.
           </p>
         </div>
-        
+
         {/* Wave divider to gray section */}
         <WaveDivider fillColor="#f9fafb" position="bottom" />
       </section>
@@ -190,7 +231,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        
+
         {/* Wave divider to gradient section */}
         <WaveDivider fillColor="#f9fafb" position="bottom" />
       </section>
@@ -213,11 +254,11 @@ export default function Home() {
       <section className="py-20 px-4 bg-gradient-to-br from-purple-50 via-white to-yellow-50 relative overflow-hidden">
         {/* Wave divider from previous section */}
         <WaveDivider fillColor="#f9fafb" position="top" flip />
-        
+
         {/* Decorative elements */}
         <div className="absolute top-20 right-20 w-24 h-24 bg-purple-200/20 rounded-full blur-xl" />
         <div className="absolute bottom-20 left-20 w-32 h-32 bg-yellow-200/20 rounded-full blur-xl" />
-        
+
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 animate-fade-in-up">
@@ -226,19 +267,19 @@ export default function Home() {
           </div>
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-purple-100/50 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              It all started with a simple idea — what if family shirts could be as fun as game night? 
-              As a family of gamers, we loved the thrill of leveling up together, whether that meant 
+              It all started with a simple idea — what if family shirts could be as fun as game night?
+              As a family of gamers, we loved the thrill of leveling up together, whether that meant
               beating a boss battle or just surviving a chaotic school morning.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              We wanted shirts that captured those inside jokes, those shared victories, and the playful 
-              "we're in this together" energy that comes with being a family. So we created FamilyLeveling, 
-              a cozy corner of the internet for geeky families, gamer parents, and little adventurers who 
+              We wanted shirts that captured those inside jokes, those shared victories, and the playful
+              "we're in this together" energy that comes with being a family. So we created FamilyLeveling,
+              a cozy corner of the internet for geeky families, gamer parents, and little adventurers who
               love to match in style.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              Every design celebrates progress, teamwork, and laughter because family life is the ultimate 
-              co-op game. From "Player One" to "Next Gen," our tees and gifts are made to bring smiles, 
+              Every design celebrates progress, teamwork, and laughter because family life is the ultimate
+              co-op game. From "Player One" to "Next Gen," our tees and gifts are made to bring smiles,
               spark conversations, and make every day feel like a new quest.
             </p>
             <div className="bg-gradient-to-r from-purple-100 to-yellow-100 rounded-2xl p-6 text-center">
@@ -258,7 +299,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        
+
         {/* Wave divider to footer */}
         <WaveDivider fillColor="#111827" position="bottom" />
       </section>
@@ -267,7 +308,9 @@ export default function Home() {
       <footer className="bg-gray-900 text-white py-12 px-4 relative">
         <div className="max-w-7xl mx-auto text-center">
           <div className="mb-6">
-            <h3 className="text-2xl font-bold mb-2">FamilyLeveling</h3>
+            <div className="flex justify-center mb-4">
+              <Image src="/images/about/logo-hor.png" alt="FamilyLeveling" width={200} height={200} />
+            </div>
             <p className="text-gray-400">Level up your family style, one matching tee at a time</p>
           </div>
           <div className="flex justify-center gap-8 mb-8">
