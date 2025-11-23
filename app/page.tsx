@@ -184,7 +184,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-0 items-center lg:items-stretch relative">
             {/* Left Side - Text and CTA (stacks below image on mobile) */}
-            <div className="py-4 md:py-20 order-2 lg:order-1 text-center lg:text-left animate-fade-in-up w-full lg:w-1/2 z-10 relative">
+            <div className="py-4 lg:py-40 order-2 lg:order-1 text-center lg:text-left animate-fade-in-up w-full lg:w-1/2 z-10 relative">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
                 Funny Family Shirts for Gamers
               </h1>
@@ -206,15 +206,15 @@ export default function Home() {
             </div>
 
             {/* Right Side - Image with semicircle concave edge (stacks on top on mobile) */}
-            <div className="order-1 lg:order-2 lg:absolute lg:left-1/2 lg:right-0 lg:top-0 lg:bottom-0 relative w-full mx-auto max-w-md h-80 sm:h-96 md:h-[500px] lg:h-full lg:max-w-none lg:mx-0 animate-fade-in-up overflow-hidden shadow-2xl lg:shadow-none rounded-2xl lg:rounded-none" style={{ animationDelay: '0.2s' }}>
+            <div className="order-1 lg:order-2 lg:absolute lg:left-[60%] lg:right-0 lg:top-0 lg:bottom-0 relative w-full mx-auto max-w-md h-80 sm:h-96 md:h-[500px] lg:h-full lg:max-w-none lg:mx-0 animate-fade-in-up overflow-hidden shadow-2xl lg:shadow-none rounded-3xl lg:rounded-none" style={{ animationDelay: '0.2s' }}>
               <div 
                 className="relative w-full h-full hero-image-clip"
               >
                 <Image
-                  src="/images/hero/3lifestyle.jpg"
+                  src="/images/hero/3lifestyle.png"
                   alt="Family wearing fun gaming-themed clothes from Family Leveling, showing happy family members in gaming shirts and hoodies"
                   fill
-                  className="object-cover"
+                  className="object-cover object-left"
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
