@@ -32,7 +32,7 @@ export default function ProductCard({ title, price, imageUrl, etsyUrl, alt }: Pr
         <h3 className="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors duration-300 line-clamp-2">
           {title}
         </h3>
-        <p className="mt-2 text-lg font-bold text-orange-600">{price}</p>
+        <p className="mt-2 text-lg font-bold text-green-600">{price}</p>
         <p className="mt-1 text-sm text-gray-500">Free Shipping</p>
       </div>
     </Link>
