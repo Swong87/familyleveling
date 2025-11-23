@@ -145,9 +145,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2">
-              <div className="text-2xl font-bold text-purple-800">
-                FamilyLeveling
-              </div>
+                <Image src="/images/about/logo-hor.png" alt="Family Leveling logo" width={100} height={100} />
             </Link>
             <Link
               href="https://www.etsy.com/shop/FamilyLeveling"
