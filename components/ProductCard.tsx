@@ -22,7 +22,7 @@ export default function ProductCard({ title, price, imageUrl, etsyUrl, alt }: Pr
         />
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+        <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
           <div className="bg-white/95 backdrop-blur-sm rounded-lg px-4 py-2 text-center">
             <span className="text-sm font-semibold text-gray-900">View on Etsy →</span>
           </div>
