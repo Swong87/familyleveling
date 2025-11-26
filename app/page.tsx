@@ -9,31 +9,31 @@ export default function Home() {
   const featuredProducts = [
     {
       title: 'Cuteness Level MAX Gamer Girl Hoodie',
-      price: '$38.50',
+      price: '$36.00',
       imageUrl: '/images/products/product-1-cuteness-max.png',
       etsyUrl: 'https://www.etsy.com/listing/4407196396/cuteness-level-max-gamer-girl-hoodie',
-      alt: 'Cuteness Level MAX Gamer Girl Hoodie - Gaming family shirt for girls available on Etsy',
+      alt: 'Cuteness Level MAX Gamer Girl Hoodie - Gaming family hoodie for girls available on Etsy',
+    },
+    {
+      title: 'Kawaii Gamer Cat Kids Hoodie, Pastel Gaming Girl Apparel',
+      price: '$36.00',
+      imageUrl: '/images/products/product-5-gamer-cat.png',
+      etsyUrl: 'https://www.etsy.com/listing/4399691225/kawaii-gamer-cat-kids-hoodie-pastel',
+      alt: 'Kawaii Gamer Cat Kids Hoodie, Pastel Gaming Girl Apparel - Gaming family hoodie available on Etsy',
     },
     {
       title: 'Cozy Galaxy Astronaut Hoodie for Kids',
-      price: '$36.00',
+      price: '$42.00',
       imageUrl: '/images/products/product-2-astronaut.png',
       etsyUrl: 'https://www.etsy.com/listing/4402382918/cozy-galaxy-astronaut-hoodie-for-kids',
-      alt: 'Cozy Galaxy Astronaut Hoodie for Kids - Space-themed gaming family shirt available on Etsy',
+      alt: 'Cozy Galaxy Astronaut Hoodie for Kids - Space-themed gaming family hoodie available on Etsy',
     },
     {
-      title: 'Merry Controller Christmas Tree Game Hoodie',
-      price: '$36.50',
-      imageUrl: '/images/products/product-3-christmas-tree.png',
-      etsyUrl: 'https://www.etsy.com/listing/4402008133/merry-controller-christmas-tree-gamer',
-      alt: 'Merry Controller Christmas Tree Game Hoodie - Christmas gaming family shirt available on Etsy',
-    },
-    {
-      title: 'Reindeer Feast Mode Activated Christmas Sweatshirt',
-      price: '$35.50',
-      imageUrl: '/images/products/product-4-reindeer.png',
-      etsyUrl: 'https://www.etsy.com/listing/4401996362/reindeer-feast-mode-activated-christmas',
-      alt: 'Reindeer Feast Mode Activated Christmas Sweatshirt - Holiday gaming family shirt available on Etsy',
+      title: 'Game On Axolotl Gamer Hoodie',
+      price: '$36.00',
+      imageUrl: '/images/products/product-6-axolotl.png',
+      etsyUrl: 'https://www.etsy.com/listing/4397329611/game-on-axolotl-gamer-hoodie',
+      alt: 'Game On Axolotl Gamer Hoodie - Gaming family hoodie available on Etsy',
     },
   ]
 
