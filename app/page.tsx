@@ -108,6 +108,21 @@ export default function Home() {
           '@type': 'Organization',
           name: 'Family Leveling',
         },
+        hasMerchantReturnPolicy: {
+          '@type': 'MerchantReturnPolicy',
+          returnFees: 'Return fees may apply',
+          returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+          returnFulfilledVia: 'https://schema.org/MerchantReturnFulfilledViaStore',
+          returnFulfilledViaStore: 'https://schema.org/MerchantReturnFulfilledViaStore',
+        },
+        shippingDetails: {
+          '@type': 'ShippingDetails',
+          shippingRate: {
+            '@type': 'ShippingRate',
+            price: '0',
+            priceCurrency: 'USD',
+          },
+        },
       },
       brand: {
         '@type': 'Brand',
