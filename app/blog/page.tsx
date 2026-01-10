@@ -6,10 +6,14 @@ import ThemeToggle from '@/components/ThemeToggle'
 export const metadata = {
   title: 'Blog - Productivity Tips for WFH Tech Parents',
   description: 'Practical productivity tips, tools, and strategies for work-from-home parents in tech and web development. Learn how to balance career growth with family time.',
+  alternates: {
+    canonical: 'https://familyleveling.com/blog',
+  },
   openGraph: {
     title: 'Blog - Productivity Tips for WFH Tech Parents',
     description: 'Practical productivity tips, tools, and strategies for work-from-home parents in tech and web development.',
     type: 'website',
+    url: 'https://familyleveling.com/blog',
   },
 }
 
@@ -28,11 +32,11 @@ export default function BlogPage() {
               Family Leveling
             </Link>
             <div className="flex items-center gap-6">
-              <nav className="flex gap-6">
-                <Link href="/" className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+              <nav className="flex gap-6" aria-label="Main navigation">
+                <Link href="/" className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors min-h-[48px] flex items-center">
                   Home
                 </Link>
-                <Link href="/blog" className="text-purple-600 dark:text-purple-400 font-semibold">
+                <Link href="/blog" className="text-purple-600 dark:text-purple-400 font-semibold min-h-[48px] flex items-center">
                   Blog
                 </Link>
               </nav>
@@ -55,19 +59,19 @@ export default function BlogPage() {
 
         {/* Categories */}
         {categories.length > 0 && (
-          <div className="mb-12">
+          <section className="mb-12" aria-label="Blog categories">
             <div className="flex flex-wrap gap-3 justify-center">
               {categories.map((category) => (
                 <Link
                   key={category}
                   href={`/blog/category/${category.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-full font-medium hover:bg-purple-200 dark:hover:bg-purple-900 transition-colors"
+                  className="bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-full font-medium hover:bg-purple-200 dark:hover:bg-purple-900 transition-colors min-h-[48px] flex items-center"
                 >
                   {category}
                 </Link>
               ))}
             </div>
-          </div>
+          </section>
         )}
 
         {/* Blog Posts Grid */}
@@ -85,9 +89,48 @@ export default function BlogPage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 dark:bg-black text-white py-12 px-4 mt-20">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-gray-400 dark:text-gray-500">© 2025 Family Leveling. All rights reserved.</p>
+      <footer className="bg-gray-900 dark:bg-black text-white py-12 px-4 mt-20" role="contentinfo">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h3 className="text-xl font-bold mb-4">Family Leveling</h3>
+              <p className="text-gray-400 dark:text-gray-500">
+                Productivity tips for WFH parents in tech and web development.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">
+                    About
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-4">Categories</h3>
+              <ul className="space-y-2 text-gray-400 dark:text-gray-500">
+                <li>Productivity</li>
+                <li>Workspace</li>
+                <li>Tools</li>
+                <li>Communication</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 dark:border-gray-900 pt-6 text-center">
+            <p className="text-gray-400 dark:text-gray-500">© 2025 Family Leveling. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </div>

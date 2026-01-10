@@ -18,6 +18,7 @@ export interface BlogPost {
   excerpt?: string
   featured?: boolean
   image?: string
+  lastModified?: string
 }
 
 export function getPostSlugs(): string[] {
@@ -53,6 +54,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
     excerpt: data.excerpt || content.substring(0, 200) + '...',
     featured: data.featured || false,
     image: data.image || undefined,
+    lastModified: data.lastModified || data.date || '',
   }
 }
 
@@ -99,4 +101,37 @@ export function getCategoryFromSlug(slug: string): string | null {
     (cat) => cat.toLowerCase().replace(/\s+/g, '-') === slug.toLowerCase()
   )
   return category || null
+}
+
+export function getRelatedPosts(currentSlug: string, limit: number = 3): BlogPost[] {
+  const currentPost = getPostBySlug(currentSlug)
+  if (!currentPost) return []
+
+  const allPosts = getAllPosts().filter((post) => post.slug !== currentSlug)
+
+  // Score posts based on shared category and tags
+  const scoredPosts = allPosts.map((post) => {
+    let score = 0
+    
+    // Same category gets high priority
+    if (post.category === currentPost.category) {
+      score += 10
+    }
+    
+    // Shared tags get points
+    const sharedTags = post.tags.filter((tag) =>
+      currentPost.tags.some((currentTag) => 
+        currentTag.toLowerCase() === tag.toLowerCase()
+      )
+    )
+    score += sharedTags.length * 3
+    
+    return { post, score }
+  })
+
+  // Sort by score (descending) and return top results
+  return scoredPosts
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((item) => item.post)
 }

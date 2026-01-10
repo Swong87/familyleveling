@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getPostsByCategory, getCategoryFromSlug, getAllCategories } from '@/lib/mdx'
 import PostCard from '@/components/PostCard'
 import ThemeToggle from '@/components/ThemeToggle'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import type { Metadata } from 'next'
 
 interface CategoryPageProps {
@@ -27,13 +28,23 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     }
   }
 
+  const canonicalUrl = `https://familyleveling.com/blog/category/${params.category}`
+
   return {
     title: `${categoryName} - Blog | Family Leveling`,
     description: `Browse all ${categoryName.toLowerCase()} articles for WFH tech parents. Productivity tips, tools, and strategies.`,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: `${categoryName} - Blog | Family Leveling`,
       description: `Browse all ${categoryName.toLowerCase()} articles for WFH tech parents.`,
       type: 'website',
+      url: canonicalUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   }
 }
@@ -48,6 +59,12 @@ export default function CategoryPage({ params }: CategoryPageProps) {
   const posts = getPostsByCategory(categoryName)
   const allCategories = getAllCategories()
 
+  const breadcrumbItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Blog', href: '/blog' },
+    { label: categoryName, href: `/blog/category/${params.category}` },
+  ]
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
@@ -58,11 +75,11 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               Family Leveling
             </Link>
             <div className="flex items-center gap-6">
-              <nav className="flex gap-6">
-                <Link href="/" className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+              <nav className="flex gap-6" aria-label="Main navigation">
+                <Link href="/" className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors min-h-[48px] flex items-center">
                   Home
                 </Link>
-                <Link href="/blog" className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                <Link href="/blog" className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors min-h-[48px] flex items-center">
                   Blog
                 </Link>
               </nav>
@@ -73,24 +90,8 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 md:px-8 py-12">
-        {/* Breadcrumb */}
-        <nav className="mb-8" aria-label="Breadcrumb">
-          <ol className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-            <li>
-              <Link href="/" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-                Home
-              </Link>
-            </li>
-            <li>/</li>
-            <li>
-              <Link href="/blog" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-                Blog
-              </Link>
-            </li>
-            <li>/</li>
-            <li className="text-gray-900 dark:text-white font-medium">{categoryName}</li>
-          </ol>
-        </nav>
+        {/* Breadcrumb with structured data */}
+        <Breadcrumbs items={breadcrumbItems} />
 
         {/* Category Header */}
         <div className="text-center mb-12">
@@ -148,9 +149,48 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 dark:bg-black text-white py-12 px-4 mt-20">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-gray-400 dark:text-gray-500">© 2025 Family Leveling. All rights reserved.</p>
+      <footer className="bg-gray-900 dark:bg-black text-white py-12 px-4 mt-20" role="contentinfo">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h3 className="text-xl font-bold mb-4">Family Leveling</h3>
+              <p className="text-gray-400 dark:text-gray-500">
+                Productivity tips for WFH parents in tech and web development.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">
+                    About
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-4">Categories</h3>
+              <ul className="space-y-2 text-gray-400 dark:text-gray-500">
+                <li>Productivity</li>
+                <li>Workspace</li>
+                <li>Tools</li>
+                <li>Communication</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 dark:border-gray-900 pt-6 text-center">
+            <p className="text-gray-400 dark:text-gray-500">© 2025 Family Leveling. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </div>

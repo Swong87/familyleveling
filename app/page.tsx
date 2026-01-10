@@ -266,6 +266,11 @@ export default function Home() {
                     Blog
                   </Link>
                 </li>
+                <li>
+                  <Link href="/about" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">
+                    About
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
