@@ -4,7 +4,8 @@ import PostHeader from '@/components/PostHeader'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import Link from 'next/link'
 import Image from 'next/image'
-import ThemeToggle from '@/components/ThemeToggle'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import ReadingProgress from '@/components/ReadingProgress'
 import TableOfContents from '@/components/TableOfContents'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -191,27 +192,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         }}
       />
 
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-purple-700 dark:text-purple-400">
-              Family Leveling
-            </Link>
-            <div className="flex items-center gap-6">
-              <nav className="flex gap-6" aria-label="Main navigation">
-                <Link href="/" className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors min-h-[48px] flex items-center">
-                  Home
-                </Link>
-                <Link href="/blog" className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors min-h-[48px] flex items-center">
-                  Blog
-                </Link>
-              </nav>
-              <ThemeToggle />
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header currentPage="blog" />
 
       <main className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -291,12 +272,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 dark:bg-black text-white py-12 px-4 mt-20" role="contentinfo">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-gray-400 dark:text-gray-500">© 2025 Family Leveling. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

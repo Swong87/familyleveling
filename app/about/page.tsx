@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import ThemeToggle from '@/components/ThemeToggle'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -13,27 +14,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-purple-700 dark:text-purple-400">
-              Family Leveling
-            </Link>
-            <div className="flex items-center gap-6">
-              <nav className="flex gap-6" aria-label="Main navigation">
-                <Link href="/" className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors min-h-[48px] flex items-center">
-                  Home
-                </Link>
-                <Link href="/blog" className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors min-h-[48px] flex items-center">
-                  Blog
-                </Link>
-              </nav>
-              <ThemeToggle />
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header currentPage="about" />
 
       <main className="max-w-4xl mx-auto px-4 md:px-8 py-16">
         <article className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 md:p-12">
@@ -98,51 +79,7 @@ export default function AboutPage() {
         </article>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 dark:bg-black text-white py-12 px-4 mt-20" role="contentinfo">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">Family Leveling</h3>
-              <p className="text-gray-400 dark:text-gray-500">
-                Productivity tips for WFH parents in tech and web development.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors">
-                    About
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-4">Categories</h3>
-              <ul className="space-y-2 text-gray-400 dark:text-gray-500">
-                <li>Productivity</li>
-                <li>Workspace</li>
-                <li>Tools</li>
-                <li>Communication</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 dark:border-gray-900 pt-6 text-center">
-            <p className="text-gray-400 dark:text-gray-500">© 2025 Family Leveling. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

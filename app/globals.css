@@ -145,6 +145,11 @@ html {
     align-items: center;
     justify-content: center;
   }
+
+  footer a,
+  footer button {
+    justify-content: flex-start;
+  }
 }
 
 /* Curved edge for hero image */
