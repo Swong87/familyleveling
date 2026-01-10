@@ -3,6 +3,7 @@ import { getPostBySlug, getAllPosts } from '@/lib/mdx'
 import PostHeader from '@/components/PostHeader'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import Link from 'next/link'
+import Image from 'next/image'
 import ThemeToggle from '@/components/ThemeToggle'
 import type { Metadata } from 'next'
 
@@ -68,6 +69,30 @@ const mdxComponents = {
   pre: (props: any) => (
     <pre className="bg-gray-900 dark:bg-black text-gray-100 p-4 rounded-lg overflow-x-auto my-4" {...props} />
   ),
+  img: (props: any) => (
+    <div className="my-8 rounded-lg overflow-hidden shadow-lg">
+      <Image
+        src={props.src}
+        alt={props.alt || ''}
+        width={800}
+        height={450}
+        className="w-full h-auto"
+        unoptimized={true}
+      />
+    </div>
+  ),
+  Image: (props: any) => (
+    <div className="my-8 rounded-lg overflow-hidden shadow-lg">
+      <Image
+        src={props.src}
+        alt={props.alt || ''}
+        width={props.width || 800}
+        height={props.height || 450}
+        className="w-full h-auto"
+        unoptimized={true}
+      />
+    </div>
+  ),
 }
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {
@@ -132,11 +157,32 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           href="/blog"
           className="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 mb-8 font-medium"
         >
-          ← Back to Blog
+          ← Back to Blogs
         </Link>
 
-        <article className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 md:p-12">
-          <PostHeader post={post} />
+        <article className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+          {/* Featured Image */}
+          {post.image && (
+            <div className="relative w-full h-64 md:h-96 mb-8">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 896px"
+                priority
+                unoptimized={true}
+              />
+              <div className="absolute top-4 left-4">
+                <span className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-purple-700 dark:text-purple-400">
+                  {post.category}
+                </span>
+              </div>
+            </div>
+          )}
+          
+          <div className="p-8 md:p-12">
+            <PostHeader post={post} />
           
           <div className="prose prose-lg max-w-none dark:prose-invert">
             <MDXRemote 
@@ -149,6 +195,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 },
               }}
             />
+          </div>
           </div>
         </article>
 

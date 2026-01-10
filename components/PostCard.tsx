@@ -13,11 +13,27 @@ export default function PostCard({ post, featured = false }: PostCardProps) {
   return (
     <article className={`group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${featured ? 'lg:col-span-2' : ''}`}>
       <Link href={postUrl} className="block">
-        <div className={`relative ${featured ? 'h-64 lg:h-80' : 'h-48'}`}>
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-100 to-orange-100 dark:from-purple-900 dark:to-orange-900" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-6xl opacity-20 dark:opacity-10">📝</span>
-          </div>
+        <div className={`relative ${featured ? 'h-64 lg:h-80' : 'h-48'} overflow-hidden`}>
+          {post.image ? (
+            <>
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                sizes={featured ? "(max-width: 1024px) 100vw, 50vw" : "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"}
+                unoptimized={true}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+            </>
+          ) : (
+            <>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-100 to-orange-100 dark:from-purple-900 dark:to-orange-900" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="text-6xl opacity-20 dark:opacity-10">📝</span>
+              </div>
+            </>
+          )}
           <div className="absolute top-4 left-4">
             <span className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-purple-700 dark:text-purple-400">
               {post.category}

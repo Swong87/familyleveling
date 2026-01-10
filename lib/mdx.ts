@@ -17,6 +17,7 @@ export interface BlogPost {
   content: string
   excerpt?: string
   featured?: boolean
+  image?: string
 }
 
 export function getPostSlugs(): string[] {
@@ -51,6 +52,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
     content,
     excerpt: data.excerpt || content.substring(0, 200) + '...',
     featured: data.featured || false,
+    image: data.image || undefined,
   }
 }
 
@@ -84,4 +86,17 @@ export function getPostsByCategory(category: string): BlogPost[] {
 export function getPostsByTag(tag: string): BlogPost[] {
   return getAllPosts()
     .filter((post) => post.tags.some((t) => t.toLowerCase() === tag.toLowerCase()))
+}
+
+export function getAllCategories(): string[] {
+  const posts = getAllPosts()
+  return Array.from(new Set(posts.map((post) => post.category)))
+}
+
+export function getCategoryFromSlug(slug: string): string | null {
+  const categories = getAllCategories()
+  const category = categories.find(
+    (cat) => cat.toLowerCase().replace(/\s+/g, '-') === slug.toLowerCase()
+  )
+  return category || null
 }

@@ -7,11 +7,13 @@ interface PostHeaderProps {
 export default function PostHeader({ post }: PostHeaderProps) {
   return (
     <header className="mb-8">
-      <div className="mb-4">
-        <span className="bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-full text-sm font-semibold">
-          {post.category}
-        </span>
-      </div>
+      {!post.image && (
+        <div className="mb-4">
+          <span className="bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-full text-sm font-semibold">
+            {post.category}
+          </span>
+        </div>
+      )}
       <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
         {post.title}
       </h1>
