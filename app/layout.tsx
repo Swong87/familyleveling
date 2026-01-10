@@ -90,6 +90,10 @@ export default function RootLayout({
         <link rel="icon" href="/images/about/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#9333ea" />
+        <meta 
+          httpEquiv="Content-Security-Policy" 
+          content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self';" 
+        />
       </head>
       <body>
         <ThemeProvider>{children}</ThemeProvider>

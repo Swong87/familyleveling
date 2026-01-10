@@ -5,9 +5,10 @@ import { BlogPost } from '@/lib/mdx'
 interface PostCardProps {
   post: BlogPost
   featured?: boolean
+  priority?: boolean
 }
 
-export default function PostCard({ post, featured = false }: PostCardProps) {
+export default function PostCard({ post, featured = false, priority = false }: PostCardProps) {
   const postUrl = `/blog/${post.slug}`
   
   return (
@@ -19,10 +20,13 @@ export default function PostCard({ post, featured = false }: PostCardProps) {
               <Image
                 src={post.image}
                 alt={post.title}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                width={800}
+                height={450}
+                className="object-cover group-hover:scale-105 transition-transform duration-300 w-full h-full"
                 sizes={featured ? "(max-width: 1024px) 100vw, 50vw" : "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"}
                 unoptimized={true}
+                priority={priority}
+                loading={priority ? 'eager' : 'lazy'}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
             </>

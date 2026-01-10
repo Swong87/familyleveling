@@ -211,12 +211,13 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             <article className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
               {/* Featured Image */}
               {post.image && (
-                <div className="relative w-full h-64 md:h-96">
+                <div className="relative w-full overflow-hidden">
                   <Image
                     src={post.image}
                     alt={post.title}
-                    fill
-                    className="object-cover"
+                    width={1200}
+                    height={630}
+                    className="object-cover w-full h-auto"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 896px"
                     priority
                     unoptimized={true}
