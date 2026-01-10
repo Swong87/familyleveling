@@ -101,16 +101,16 @@ export default function Home() {
               Family Leveling
             </Link>
             <div className="flex items-center gap-6">
-              <nav className="flex gap-6">
+              <nav className="flex gap-6" aria-label="Main navigation">
                 <Link
                   href="/"
-                  className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors"
+                  className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors min-h-[48px] flex items-center"
                 >
                   Home
                 </Link>
                 <Link
                   href="/blog"
-                  className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors"
+                  className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors min-h-[48px] flex items-center"
                 >
                   Blog
                 </Link>
