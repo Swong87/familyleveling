@@ -58,7 +58,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 dark:border-gray-900 pt-6 text-center">
-          <p className="text-gray-400 dark:text-gray-500">© 2025 Family Leveling. All rights reserved.</p>
+          <p className="text-gray-400 dark:text-gray-500">© {new Date().getFullYear()} Family Leveling. All rights reserved.</p>
         </div>
       </div>
     </footer>
