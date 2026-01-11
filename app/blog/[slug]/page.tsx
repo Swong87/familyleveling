@@ -15,6 +15,7 @@ import NewsletterCTA from '@/components/NewsletterCTA'
 import CodeBlock from '@/components/CodeBlock'
 import KeyTakeaways from '@/components/KeyTakeaways'
 import FAQSection from '@/components/FAQSection'
+import AmazonProductCard from '@/components/AmazonProductCard'
 import type { Metadata } from 'next'
 
 interface BlogPostPageProps {
@@ -129,6 +130,7 @@ const mdxComponents = {
   KeyTakeaways,
   FAQSection,
   NewsletterCTA,
+  AmazonProductCard,
 }
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {
