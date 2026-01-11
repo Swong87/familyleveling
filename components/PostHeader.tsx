@@ -1,4 +1,5 @@
 import { BlogPost } from '@/lib/mdx'
+import ViewCounter from './ViewCounter'
 
 interface PostHeaderProps {
   post: BlogPost
@@ -34,6 +35,8 @@ export default function PostHeader({ post }: PostHeaderProps) {
         </time>
         <span>•</span>
         <span>{post.readingTime}</span>
+        <span>•</span>
+        <ViewCounter slug={post.slug} />
       </div>
       {post.tags.length > 0 && (
         <div className="flex flex-wrap gap-2 mt-6">
