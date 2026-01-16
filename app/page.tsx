@@ -104,13 +104,13 @@ export default function Home() {
         >
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 animate-fade-in-up">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
                 Productivity Tips for WFH Tech Parents
               </h1>
-              <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
                 Learn how to balance your tech career with family life. Practical tips, tools, and strategies from parents who've been there.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/blog"
                   className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-4 rounded-full transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl text-center"
@@ -127,10 +127,10 @@ export default function Home() {
           <section className="py-20 px-4 bg-white dark:bg-gray-900 relative" aria-label="Featured articles">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 animate-fade-in-up">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                   Featured Articles
                 </h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                   Start here with our most popular productivity tips and strategies
                 </p>
               </div>
@@ -183,14 +183,14 @@ export default function Home() {
         {/* About Section */}
         <section className="py-20 px-4 bg-gradient-to-br from-purple-100 to-orange-100 dark:from-purple-900 dark:to-orange-900 relative overflow-hidden" aria-label="About Family Leveling">
           <div className="max-w-4xl mx-auto text-center relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
               About Family Leveling
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               We're a community of work-from-home parents navigating the unique challenges of building a tech career while raising a family. 
               This blog is our shared space for productivity tips, tools, and strategies that actually work in real life.
             </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               Whether you're a developer, designer, or tech professional, you'll find practical advice on time management, workspace setup, 
               automation tools, and maintaining work-life balance—all from parents who understand the juggle.
             </p>
