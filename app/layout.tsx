@@ -98,11 +98,11 @@ export default function RootLayout({
           strategy="afterInteractive"
         >
           {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-RLLX0D28R6');
-    `}
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-RLLX0D28R6');
+          `}
         </Script>
         <link rel="icon" href="/images/about/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
