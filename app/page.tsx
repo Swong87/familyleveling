@@ -115,7 +115,7 @@ export default function Home() {
                   href="/blog"
                   className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-4 rounded-full transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl text-center"
                 >
-                  Read the Blog
+                  View All Blogs
                 </Link>
               </div>
             </div>
