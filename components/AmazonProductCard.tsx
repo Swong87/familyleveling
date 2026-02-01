@@ -30,35 +30,35 @@ export default function AmazonProductCard({
 }: AmazonProductCardProps) {
 
   return (
-    <div className="my-8 bg-gradient-to-br from-orange-50 to-purple-50 dark:from-orange-900/20 dark:to-purple-900/20 rounded-2xl p-6 border-2 border-orange-200 dark:border-orange-800 shadow-lg hover:shadow-xl transition-all duration-300">
-      <div className="flex items-start gap-6">
+    <div className="my-8 bg-gradient-to-br from-orange-50 to-purple-50 dark:from-orange-900/20 dark:to-purple-900/20 rounded-2xl p-4 sm:p-6 border-2 border-orange-200 dark:border-orange-800 shadow-lg hover:shadow-xl transition-all duration-300">
+      <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
         {/* Product Image (if provided) */}
         {imageUrl && (
-          <div className="flex-shrink-0 w-32 h-32 relative rounded-lg overflow-hidden bg-white dark:bg-gray-800">
+          <div className="flex-shrink-0 w-full sm:w-32 h-48 sm:h-32 relative rounded-lg overflow-hidden bg-white dark:bg-gray-800">
             <Image
               src={imageUrl}
               alt={title}
               fill
               className="object-contain"
-              sizes="128px"
+              sizes="(max-width: 640px) 100vw, 128px"
             />
           </div>
         )}
 
         {/* Product Info */}
-        <div className="flex-1 min-w-0">
+        <div className="flex-1 min-w-0 w-full">
           <div className="flex items-start justify-between gap-4">
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+            <div className="w-full">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">
                 {title}
               </h3>
               {description && (
-                <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                   {description}
                 </p>
               )}
               {price && (
-                <p className="text-2xl font-bold text-green-600 dark:text-green-400 mb-3">
+                <p className="text-xl sm:text-2xl font-bold text-green-600 dark:text-green-400 mb-3">
                   {price}
                 </p>
               )}
@@ -70,10 +70,10 @@ export default function AmazonProductCard({
             href={url}
             target="_blank"
             rel="noopener noreferrer sponsored"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-4 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg w-full sm:w-auto text-sm sm:text-base"
           >
             <svg
-              className="w-5 h-5"
+              className="w-4 h-4 sm:w-5 sm:h-5"
               fill="currentColor"
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -97,7 +97,7 @@ export default function AmazonProductCard({
         <img 
           src="/images/blogs/Amazon_logo.svg"
           alt="Amazon"
-          className="h-6 w-auto dark:invert dark:brightness-90"
+          className="h-5 sm:h-6 w-auto dark:invert dark:brightness-90"
         />
         <span className="text-xs text-gray-500 dark:text-gray-400">
           Trusted marketplace
