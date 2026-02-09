@@ -39,7 +39,7 @@ export default function AuthorBox({ author, bio, avatar, social }: AuthorBoxProp
         
         <div className="flex-1">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-            Written by {author}
+            Written by <Link href="/about" className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium">{author}</Link>
           </h3>
           <p className="text-gray-700 dark:text-gray-300 mb-3 leading-relaxed">
             {bio || defaultBio}

@@ -249,7 +249,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 </div>
 
                 {/* Author Box */}
-                <AuthorBox author={post.author} />
+                <AuthorBox author={post.author} avatar="/images/about/about-me.jpeg" />
               </div>
             </article>
 

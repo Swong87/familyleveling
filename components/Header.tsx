@@ -26,6 +26,16 @@ export default function Header({ currentPage }: HeaderProps) {
                 Home
               </Link>
               <Link
+                href="/about"
+                className={`hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors min-h-[48px] flex items-center ${
+                  currentPage === 'about'
+                    ? 'text-purple-600 dark:text-purple-400'
+                    : 'text-gray-700 dark:text-gray-300'
+                }`}
+              >
+                About
+              </Link>
+              <Link
                 href="/blog"
                 className={`hover:text-purple-600 dark:hover:text-purple-400 transition-colors min-h-[48px] flex items-center ${
                   currentPage === 'blog'
