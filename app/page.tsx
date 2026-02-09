@@ -219,7 +219,7 @@ export default function Home() {
         )}
 
         {/* About Section */}
-        <section className="py-20 px-4 bg-gradient-to-br from-purple-100 to-orange-100 dark:from-purple-900 dark:to-orange-900 relative overflow-hidden" aria-label="About Family Leveling">
+        {/* <section className="py-20 px-4 bg-gradient-to-br from-purple-100 to-orange-100 dark:from-purple-900 dark:to-orange-900 relative overflow-hidden" aria-label="About Family Leveling">
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
               About Family Leveling
@@ -233,7 +233,7 @@ export default function Home() {
               automation tools, and maintaining work-life balance—all from parents who understand the juggle.
             </p>
           </div>
-        </section>
+        </section> */}
 
         {/* Newsletter CTA Section */}
         <section className="py-20 px-4 bg-white dark:bg-gray-900" aria-label="Stay updated">
@@ -241,16 +241,16 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Stay Updated
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
+            {/* <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
               Get the latest productivity tips delivered to your inbox
-            </p>
+            </p> */}
             <div className="bg-gradient-to-r from-purple-100 to-orange-100 dark:from-purple-900 dark:to-orange-900 rounded-2xl p-8">
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 New articles published weekly with actionable tips for WFH tech parents.
               </p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              {/* <p className="text-sm text-gray-600 dark:text-gray-400">
                 (Newsletter coming soon - check back regularly for new content!)
-              </p>
+              </p> */}
             </div>
           </div>
         </section>
