@@ -162,7 +162,7 @@ export default function Home() {
 
         {/* Featured Posts Section */}
         {featuredPosts.length > 0 && (
-          <section className="py-20 px-4 bg-white dark:bg-gray-900 relative" aria-label="Featured articles">
+          <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800  relative" aria-label="Featured articles">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -183,14 +183,14 @@ export default function Home() {
 
         {/* Recent Posts Section */}
         {recentPosts.length > 0 && (
-          <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800 relative" aria-label="Recent articles">
+          <section className="py-20 px-4 bg-gradient-to-br from-purple-100 to-orange-100 dark:from-purple-900 dark:to-orange-900 relative" aria-label="Recent articles">
             <div className="max-w-7xl mx-auto">
               <div className="flex items-center justify-between mb-12">
                 <div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                     Latest Articles
                   </h2>
-                  <p className="text-lg text-gray-600 dark:text-gray-400">
+                  <p className="text-lg text-gray-700 dark:text-gray-300">
                     Fresh productivity tips and insights
                   </p>
                 </div>
