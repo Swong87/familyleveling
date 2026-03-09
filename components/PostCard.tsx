@@ -14,7 +14,7 @@ export default function PostCard({ post, featured = false, priority = false }: P
   return (
     <article className={`group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${featured ? 'lg:col-span-2' : ''}`}>
       <Link href={postUrl} className="block">
-        <div className={`relative ${featured ? 'h-64 lg:h-80' : 'h-48'} overflow-hidden`}>
+        <div className={`relative ${featured ? 'h-64 lg:h-80' : 'aspect-video'} overflow-hidden`}>
           {post.image ? (
             <>
               <Image
