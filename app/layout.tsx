@@ -80,6 +80,8 @@ export const metadata: Metadata = {
   category: 'Blog',
 }
 
+const isProduction = process.env.NODE_ENV === 'production'
+
 export default function RootLayout({
   children,
 }: {
@@ -88,6 +90,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+      {isProduction && (
+        <>
         {/* Google tag (gtag.js) */}
         <Script
           strategy="afterInteractive"
@@ -102,8 +106,10 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-RLLX0D28R6');
-          `}
-        </Script>
+            `}
+          </Script>
+        </>
+      )}
         <link rel="icon" href="/images/about/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#9333ea" />
