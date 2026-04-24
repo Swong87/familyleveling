@@ -6,30 +6,31 @@ import Footer from '@/components/Footer'
 import Image from 'next/image'
 
 export const metadata = {
-  title: 'Productivity Tips for WFH Tech Parents | Family Leveling',
-  description: 'Practical productivity tips, tools, and strategies for work-from-home parents in tech and web development. Learn how to balance career growth with family time.',
+  title: 'WFH Parent Systems for Energy, Focus & Balance | Family Leveling',
+  description:
+    'Practical systems for work-from-home parents to improve energy, focus, and mental clarity. Real strategies for balancing tech work and family life.',
   keywords: [
     'WFH parents',
-    'work from home productivity',
-    'tech parent tips',
-    'web developer work life balance',
-    'remote work with kids',
-    'productivity for parents',
-    'WFH tips',
-    'tech career family balance',
-    'developer productivity',
-    'remote work strategies',
+    'work from home with kids',
+    'remote work mental health',
+    'energy management productivity',
+    'work from home burnout',
+    'focus systems remote work',
+    'tech parent productivity',
+    'work life balance remote work',
   ],
   openGraph: {
-    title: 'Productivity Tips for WFH Tech Parents | Family Leveling',
-    description: 'Practical productivity tips, tools, and strategies for work-from-home parents in tech and web development.',
+    title: 'WFH Parent Systems for Energy, Focus & Balance | Family Leveling',
+    description:
+      'Simple systems to help work-from-home parents reduce stress, improve focus, and build a better daily rhythm.',
     type: 'website',
     url: 'https://familyleveling.com',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Productivity Tips for WFH Tech Parents',
-    description: 'Learn how to balance your tech career with family life.',
+    title: 'WFH Parent Systems for Energy & Focus',
+    description:
+      'Less stress. Better focus. Real systems for work-from-home parents.',
   },
 }
 
@@ -106,19 +107,68 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-                Productivity Tips for WFH Tech Parents
+                Build a Better Work-From-Home Life
               </h1>
-              <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
-                Learn how to balance your tech career with family life. Practical tips, tools, and strategies from parents who've been there.
+
+              <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                Simple systems for work-from-home parents who want more energy, better focus, and a calmer day.
               </p>
+
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+                Remote work was supposed to make life easier — but constant context switching, low energy, and blurred boundaries make it harder.
+                This site is about fixing that with practical systems that actually work in real life.
+              </p>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="/blog"
+                  href="/blog/remote-work-is-quietyl-wrecking-mental-health"
                   className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-4 rounded-full transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl text-center"
                 >
-                  View All Blogs
+                  Start Here
+                </Link>
+
+                <Link
+                  href="/blog"
+                  className="border border-purple-600 text-purple-600 dark:text-purple-400 font-semibold px-8 py-4 rounded-full hover:bg-purple-50 dark:hover:bg-gray-800 transition text-center"
+                >
+                  Browse Articles
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 px-4 bg-white dark:bg-gray-900">
+          <div className="max-w-5xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+              Start Here
+            </h2>
+
+            <p className="text-lg text-gray-600 dark:text-gray-400 mb-10">
+              If you're new, these will give you the biggest wins first:
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-6 text-left">
+              <Link href="/blog/remote-work-is-quietyl-wrecking-mental-health" className="p-6 rounded-xl bg-gray-50 dark:bg-gray-800 hover:shadow-lg transition">
+                <h3 className="font-semibold text-lg mb-2">Mental Health</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Why remote work quietly drains you—and how to fix it.
+                </p>
+              </Link>
+
+              <Link href="/blog/energy-management-over-time-management" className="p-6 rounded-xl bg-gray-50 dark:bg-gray-800 hover:shadow-lg transition">
+                <h3 className="font-semibold text-lg mb-2">Energy & Focus</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Stop managing time. Start managing your energy.
+                </p>
+              </Link>
+
+              <Link href="/blog/the-emergency-backup-plan" className="p-6 rounded-xl bg-gray-50 dark:bg-gray-800 hover:shadow-lg transition">
+                <h3 className="font-semibold text-lg mb-2">WFH Chaos Plan</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  What to do when work and family collide.
+                </p>
+              </Link>
             </div>
           </div>
         </section>
@@ -142,10 +192,12 @@ export default function Home() {
                 {/* Introduction */}
                 <div>
                   <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                    Hi, I'm <strong className="text-purple-600 dark:text-purple-400">Stephen</strong> — a remote web developer and dad of two, sharing what actually works for me in building a tech career from home while being present for my family.
+                    Hi, I'm <strong className="text-purple-600 dark:text-purple-400">Stephen</strong> — a remote developer and dad of two.
                   </p>
+
                   <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                    No hustle culture. No generic advice. Just practical systems I'm testing in real time — between meetings, school drop-offs, and half-finished cups of coffee.
+                    I build and test simple systems to make work-from-home life less stressful, more focused, and actually sustainable —
+                    between meetings, school drop-offs, and everything in between.
                   </p>
                   <Link
                     href="/about"
@@ -169,7 +221,7 @@ export default function Home() {
                   Featured Articles
                 </h2>
                 <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                  Start here with our most popular productivity tips and strategies
+                  Start with the systems that make the biggest difference in daily WFH life
                 </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -191,7 +243,7 @@ export default function Home() {
                     Latest Articles
                   </h2>
                   <p className="text-lg text-gray-700 dark:text-gray-300">
-                    Fresh productivity tips and insights
+                    Real-world systems for energy, focus, and work-from-home life
                   </p>
                 </div>
                 <Link
